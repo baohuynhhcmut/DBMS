@@ -53,7 +53,7 @@ public class DicomIngestService {
             );
 
             try {
-                for (int i = 0; i < files.size(); i += batchSize) {
+                for (int i = 0; i < 2; i += batchSize) {
                     List<Path> batch = files.subList(i, Math.min(i + batchSize, files.size()));
                     processBatch(batch, executor);
                     System.gc(); // Suggest GC to reclaim memory between batches
